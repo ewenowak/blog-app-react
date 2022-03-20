@@ -3,6 +3,7 @@ import { Modal, Button, Container, Row, Col } from "react-bootstrap";
 import { Link, useParams, Navigate } from "react-router-dom";
 import { useSelector, useDispatch} from "react-redux";
 import { getPostbyId } from "../../redux/postsReducer";
+import { deletePost } from "../../redux/postsReducer";
 
 
 const Post = () => {
@@ -15,7 +16,7 @@ const Post = () => {
     const handleShow = () => setShowModal(true);
 
     
-    const deletePost = () => {
+    const deletedPost = () => {
         dispatch(deletePost(postData.id))
     };
     
@@ -32,7 +33,7 @@ const Post = () => {
             </Modal.Body>
             <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>Cancel</Button>
-                <Button variant="danger" onClick={() => deletePost}>Remove</Button>
+                <Button variant="danger" onClick={deletedPost}>Remove</Button>
             </Modal.Footer>
             </Modal>
 

@@ -1,12 +1,12 @@
 const initialState = {
     posts: [
-        {
-            id: '1',
-            title: 'Animal spirit',
-            shortDescription: 'Wake up your animal spirit...',
-            content: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using',
-            publishedDate: '02-02-2022',
-            author: 'John Doe'
+      {
+        id: '1',
+        title: 'Animal spirit',
+        shortDescription: 'Wake up your animal spirit...',
+        content: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using',
+        publishedDate: '02-02-2022',
+        author: 'John Doe'
       },
       {
         id: '2',
