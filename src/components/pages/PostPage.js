@@ -1,6 +1,11 @@
+
+import Post from "../features/Post";
+
+
 const PostPage = () => {
+    
     return (
-            <h2>PostPage</h2>
+        <Post />
     );
 };
 
