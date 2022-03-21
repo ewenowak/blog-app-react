@@ -2,10 +2,11 @@ import { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { addPost } from "../../redux/postsReducer";
+import { useNavigate } from "react-router-dom";
 
 const AddPostForm = () => {
     const dispatch = useDispatch();
-
+    const navigate = useNavigate();
     const [title, setTitle] = useState('');
     const [author, setAuthor] = useState('');
     const [publishedDate, setPublishedDate] = useState('');
@@ -41,7 +42,7 @@ const AddPostForm = () => {
             <Form.Label>Main content</Form.Label>
             <Form.Control className="mb-3" as="textarea" rows={4} placeholder="Short Description" value={content} onChange={e => setContent(e.target.value)} />
         
-            <Button variant="primary" type="submit">Add Post</Button>
+            <Button variant="primary" type="submit" onClick={()=> navigate('/')}>Add Post</Button>
         </Form>
     );
 };
