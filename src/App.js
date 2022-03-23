@@ -6,7 +6,8 @@ import Footer from './components/views/Footer';
 import { Container } from 'react-bootstrap';
 import PostPage from './components/pages/PostPage';
 import PostEdit from './components/pages/PostEdit';
-import About from './components/pages/About'
+import About from './components/pages/About';
+import WrongAddress from './components/pages/WrongAddress';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/post/add" element={ <PostAdd /> } />
           <Route path="/post/edit/:id" element={ <PostEdit /> } />
           <Route path="/about" element={ <About /> } />
+          <Route path="*" element={<WrongAddress/> } />
         </Routes>
         <Footer />
       </Container>
