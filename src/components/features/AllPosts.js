@@ -2,6 +2,7 @@ import { Card, Button, Row, Col} from "react-bootstrap";
 import { useSelector } from "react-redux"
 import { getAllPosts } from "../../redux/postsReducer"
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 const AllPosts = () => {
     const posts = useSelector(getAllPosts);
@@ -22,4 +23,9 @@ const AllPosts = () => {
         </Row>
     );
 };
+
+AllPosts.propTypes={
+    posts: PropTypes.array.isRequired,
+};
+
 export default AllPosts;

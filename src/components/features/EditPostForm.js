@@ -3,7 +3,7 @@ import { useNavigate, Navigate, useParams } from "react-router-dom";
 import { editPost } from "../../redux/postsReducer";
 import PostForm from "./PostForm";
 import { getPostById } from "../../redux/postsReducer";
-
+import PropTypes from 'prop-types';
 
 const EditPostForm = () => {
     const dispatch = useDispatch();
@@ -20,5 +20,11 @@ const EditPostForm = () => {
     return (
         <PostForm action={handleSubmit} actionText='Edit Post' title={postData.title} author={postData.author} publishedDate={postData.publishedDate} content={postData.content} shortDescription={postData.shortDescription} />
     );
+};
+
+EditPostForm.propTypes= {
+    postData: PropTypes.array.isRequired,
+    handleSubmit: PropTypes.func.isRequired,
+    editPost: PropTypes.func.isRequired,
 };
 export default EditPostForm;

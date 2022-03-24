@@ -4,6 +4,7 @@ import { Link, useParams, Navigate } from "react-router-dom";
 import { useSelector, useDispatch} from "react-redux";
 import { getPostById } from "../../redux/postsReducer";
 import { deletePost } from "../../redux/postsReducer";
+import PropTypes from 'prop-types';
 
 
 const Post = () => {
@@ -52,4 +53,9 @@ const Post = () => {
         </>
     );
 };
+
+Post.propTypes={
+    postData: PropTypes.array.isRequired,
+    deletePost: PropTypes.func.isRequired,
+  };
 export default Post;

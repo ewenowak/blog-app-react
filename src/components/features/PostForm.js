@@ -1,7 +1,6 @@
 import { Form, Button } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-
+import PropTypes from 'prop-types';
 
 const PostForm = ({action, actionText, ...props}) => {
   const [title, setTitle] = useState(props.title || '');
@@ -36,4 +35,15 @@ const PostForm = ({action, actionText, ...props}) => {
     </Form>
   );
 };
+
+PostForm.propTypes={
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  publishedDate: PropTypes.string.isRequired,
+  shortDescription: PropTypes.array.isRequired,
+  content: PropTypes.array.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+};
+
+
 export default PostForm;
