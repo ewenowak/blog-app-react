@@ -2,7 +2,7 @@ import { Card, Button, Row, Col} from "react-bootstrap";
 import { useSelector } from "react-redux"
 import { getAllPosts } from "../../redux/postsReducer"
 import { Link } from "react-router-dom";
-import PropTypes from 'prop-types';
+import dateToStr from "../../utils/dateToStr";
 
 const AllPosts = () => {
     const posts = useSelector(getAllPosts);
@@ -14,7 +14,7 @@ const AllPosts = () => {
                     <Card.Body>
                         <Card.Title>{post.title}</Card.Title>
                         <Card.Text><b>Author:</b> {post.author}</Card.Text>
-                        <Card.Text><b>Published:</b> {post.publishedDate}</Card.Text>
+                        <Card.Text><b>Published:</b> {dateToStr(post.publishedDate)}</Card.Text>
                         <Card.Text>{post.shortDescription}</Card.Text>
                         <Button as={Link} to={"/post/" + post.id} type="primary">Read more</Button>
                     </Card.Body>
@@ -24,8 +24,5 @@ const AllPosts = () => {
     );
 };
 
-AllPosts.propTypes={
-    posts: PropTypes.array.isRequired,
-};
 
 export default AllPosts;

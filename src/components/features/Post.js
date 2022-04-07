@@ -4,7 +4,9 @@ import { Link, useParams, Navigate } from "react-router-dom";
 import { useSelector, useDispatch} from "react-redux";
 import { getPostById } from "../../redux/postsReducer";
 import { deletePost } from "../../redux/postsReducer";
-import PropTypes from 'prop-types';
+import dateToStr from "../../utils/dateToStr";
+
+
 
 
 const Post = () => {
@@ -47,15 +49,12 @@ const Post = () => {
                 </Col>
             </Row>
             <p><b>Author:</b> {postData.author}</p>
-            <p><b>Published:</b> {postData.publishedDate}</p>
-            <p>{postData.content}</p>
+            <p><b>Published:</b>{dateToStr(postData.publishedDate)}</p>
+            <p dangerouslySetInnerHTML={{ __html: postData.content }} />
         </Container>
         </>
     );
 };
 
-Post.propTypes={
-    postData: PropTypes.array.isRequired,
-    deletePost: PropTypes.func.isRequired,
-  };
+
 export default Post;
