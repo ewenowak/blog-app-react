@@ -15,6 +15,7 @@ const AllPosts = () => {
                         <Card.Title>{post.title}</Card.Title>
                         <Card.Text><b>Author:</b> {post.author}</Card.Text>
                         <Card.Text><b>Published:</b> {dateToStr(post.publishedDate)}</Card.Text>
+                        <Card.Text><b>Category:</b> {post.category}</Card.Text>
                         <Card.Text>{post.shortDescription}</Card.Text>
                         <Button as={Link} to={"/post/" + post.id} type="primary">Read more</Button>
                     </Card.Body>

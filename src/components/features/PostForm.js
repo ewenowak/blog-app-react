@@ -5,6 +5,8 @@ import 'react-quill/dist/quill.snow.css';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { useForm } from "react-hook-form";
+import { useSelector } from "react-redux";
+import { getAllCategories } from "../../redux/categoriesReducer";
 
 
 const PostForm = ({action, actionText, ...props}) => {
@@ -17,11 +19,14 @@ const PostForm = ({action, actionText, ...props}) => {
   const [dateError, setDateError] = useState(false);
   const { register, handleSubmit: validate, formState: { errors } } = useForm();
 
+  const categories = useSelector(getAllCategories);
+  const [category, setCategory] = useState(props.category || '');
+
   const handleSubmit = e => {
     setContentError(!content)
     setDateError(!publishedDate)
     if(content && publishedDate) {
-      action({ title, author, publishedDate, shortDescription, content });
+      action({ title, author, publishedDate, shortDescription, content, category });
     }
   };
 
@@ -60,6 +65,15 @@ const PostForm = ({action, actionText, ...props}) => {
           as="textarea" rows={2} placeholder="Short Description"
         />
         {errors.shortDescription && <small className="d-block form-text text-danger mt-2"> This field is required and need min 20 characters.</small>}
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formCategory">
+        <Form.Label>Category</Form.Label>
+        <Form.Select value={category} onChange={e => setCategory(e.target.value)}>
+          <option>Select Category</option>
+          {categories.map( category => (
+            <option key={category}>{category}</option>
+          ))}
+        </Form.Select>
       </Form.Group>
       <Form.Group className="mb-3" controlId="formMainContent">
         <Form.Label>Main content</Form.Label>

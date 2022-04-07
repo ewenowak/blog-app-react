@@ -18,7 +18,7 @@ const EditPostForm = () => {
 
     if(!postData) return <Navigate to="/" />
     return (
-        <PostForm action={handleSubmit} actionText='Edit Post' title={postData.title} author={postData.author} publishedDate={postData.publishedDate} content={postData.content} shortDescription={postData.shortDescription} />
+        <PostForm action={handleSubmit} actionText='Edit Post' title={postData.title} author={postData.author} publishedDate={postData.publishedDate} content={postData.content} shortDescription={postData.shortDescription} category />
     );
 };
 
