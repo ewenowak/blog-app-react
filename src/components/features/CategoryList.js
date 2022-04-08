@@ -11,7 +11,7 @@ const CategoryList = () => {
     return (
         <ListGroup>
             {categories.map(category => (
-                <ListGroup.Item key={category} action as={Link}  to={"/category/" + category.toLowerCase()}>{category}</ListGroup.Item>
+                <ListGroup.Item key={category} action as={Link}  to={"/categories/" + category.toLowerCase()}>{category}</ListGroup.Item>
             ))}
       </ListGroup>    
     );

@@ -9,7 +9,7 @@ import PostEdit from './components/pages/PostEdit';
 import About from './components/pages/About';
 import WrongAddress from './components/pages/WrongAddress';
 import Categories from './components/pages/Categories';
-import Category from './components/features/Category';
+import CategoryPage from './components/pages/CategoryPage';
 
 
 function App() {
@@ -24,8 +24,8 @@ function App() {
           <Route path="/post/edit/:id" element={ <PostEdit /> } />
           <Route path="/about" element={ <About /> } />
           <Route path="/categories" element={ <Categories /> } />
+          <Route path="/categories/:categoryName" element={<CategoryPage />} />
           <Route path="*" element={<WrongAddress/> } />
-          <Route path="/category/:categoryName" element={<Category />} />
         </Routes>
         <Footer />
       </Container>
