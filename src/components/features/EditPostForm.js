@@ -23,8 +23,8 @@ const EditPostForm = () => {
 };
 
 EditPostForm.propTypes= {
-    postData: PropTypes.array.isRequired,
-    handleSubmit: PropTypes.func.isRequired,
-    editPost: PropTypes.func.isRequired,
+    postData: PropTypes.array,
+    handleSubmit: PropTypes.func,
+    editPost: PropTypes.func,
 };
 export default EditPostForm;
